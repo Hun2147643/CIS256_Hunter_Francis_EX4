@@ -7,7 +7,7 @@ import random
 
 class WordGuesser:
     # Initializes the WordGuesser game.
-    def __init__(self, word_list, max_attempts=7):
+    def __init__(self, word_list, max_attempts=5):
         # Randomly selects a word from the words list and sets it equal to secret_word.
         self.secret_word = random.choice(word_list).upper()
         # Creates an empty set to hold the guessed letters.
@@ -66,6 +66,8 @@ class WordGuesser:
         # Runs the main game loop.
         print("Welcome to the Word Guessing game!")
         print(f"The word has {len(self.secret_word)} letters.")
+        print("Hint: it is a coding structure term.")
+        
         while True:
             self.display_current_state()
             guess = input("Guess a letter: ")
