@@ -28,6 +28,16 @@ class WordGuesser:
 
         guess = guess.upper()
 
+        # Checks to make sure user's guess is only one character and is a letter.
+        if not guess.isalpha() or len(guess) != 1:
+            print("Invalid input. Please enter a single letter.")
+            return False
+        
+        # Checks whether user already guessed a letter and informs user of mistake. 
+        if guess in self.guessed_letters:
+            print(f"You already guessed '{guess}'. Try a different letter.")
+            return False
+
         # Adds guessed letters to guessed_letters set
         self.guessed_letters.add(guess)
 
